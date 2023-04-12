@@ -22,7 +22,7 @@ public class EX3 {
 		}
 		
 		System.out.println("최종값은"+sum);
-		
+		//누적변수 sum을 설정해두고, i를 계속 반복해서 넣어주는데, 짝수일땐 음수로 sum에 넣고, 홀수일 땐 양수로 넣는다.
 	}
 
 }
