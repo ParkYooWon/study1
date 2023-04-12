@@ -14,6 +14,7 @@ public class EX2 {
 				continue;
 			}
 			System.out.println(a);
+			// continue문을 사용하면, 스크립트 아래로 더 이상 내려가지 않고, 바로 반복문의 조건식으로 돌아간다.
 			
 		}
 	}
