@@ -1,0 +1,79 @@
+<doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>고급시계</title>
+        <style>
+            #wrap{
+                width: 500px;
+                height: 500px;
+                margin: 0 auto;
+                text-align: center;
+                border: 2px solid black;
+             
+            }
+            #wrap div{
+                line-height: 150px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div>
+                <h2>setInterval사용 고급시계</h2>
+                <b><p id="High_Clock"></p></b> <!--1) -->
+
+                </p>    
+
+            </div>
+        </div>
+
+        <script>
+            //1. 시계가 출력될 배경과 위치를 설정해준다.
+            //2. 시간의 소스들은 Date()와 getHours 등을 이용하여 구한다.
+            //3. 최종 출력할 소스를 출력될 위치에 나올 수 있도록 연결한다.
+            //4. 2시 31분 4초가 아니라, 02시 31분 04초가 될 수 있도록, 누적변수를 이용한 함수를 만들어 적용하여 출력한다.
+            //5. setInterval( function(), 500 )을 이용하여, 새로고침없이 계속해서 웹페이지를 업데이틀 할 수 있게 해준다.
+            //6. 함수 출력
+
+            function addTozero(value) {     //4) 
+                if(value < 10) 
+                    value= "0"+value;
+                    return value;
+                
+                
+            }
+
+
+
+            function clock() {
+
+                var now_Time= new Date(); //2)
+
+                var now_Hours= addTozero(now_Time.getHours());
+                var now_Minutes= addTozero(now_Time.getMinutes());
+                var now_Seconds=addTozero(now_Time.getSeconds());
+
+                high_clock = now_Hours+ ":"+now_Minutes+"."+now_Seconds ; //3)
+
+                document.getElementById('High_Clock').innerHTML=high_clock; //3)
+
+            }
+
+           
+
+            setInterval ( function(){
+                clock();
+            }, 500);   //500이면 0.5초마다 업데이트, 2000이면 2초마다 업데이트
+
+            clock();
+
+            //setInterval() 사용법
+            //웹페이지의 특정 부분을 주기적으로 업데이트해줘야 하거나,
+            //어떤 API로 부터 변경된 데이터를 주기적으로 받아와야 하는 경우가 있는데요. 
+            //이럴 때는 자바스크립트의 setInterval() 함수를 사용할 수 있습니다.
+            
+        </script>
+    </body>
+</html>
