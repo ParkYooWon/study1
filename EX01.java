@@ -1,34 +1,23 @@
-package STUDY0413;
-
-import java.util.Scanner;
+package DAY0424;
 
 public class EX01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		int c=0;
+		int x= 10, y=20, z=0;
+		z= add(x, y);				//위에서 add함수 호출
+		System.out.println(z);
+		
+		
+		
+	}//MAIN
 
-	/*정수를 입력받아, 절대값을 표시해주는 프로그램을 작성하라 (삼항연산자 사용해서)*/
+	static int add( int a, int b)		// add함수가 호출되고나서 리턴하고 나서는 이 add함수가 닫힌다.
+	{
+		int c =0;
+		c =a+b;
+		return c;
 		
-	System.out.println("절대값으로 변경할 정수를 입력하여 주시오.");
-	Scanner sc = new Scanner(System.in);
-	int what = sc.nextInt();
-	
-	System.out.println("당신이 입력한 숫자가" +what+ "맞습니까? ");
-	int sqrtwhat = (what < 0 ) ?  what*(-1) : what ;
-	System.out.println(sqrtwhat);
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}/* ㄴ*/
-
+	}
 }
