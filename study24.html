@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html lang="ko">
+        <head>
+            <meta charset="utf-8">
+            <title>
+
+            </title>
+        </head>
+        <body>
+            <!-- get통신 방식은 도메인 목적지 뒤에 ?이름=값을 이용하여 전송-->
+            <!-- study24-2.html?data=value -->
+            <a href="study24-2.html?test=으아악">눌러서 이동</a><br>
+            <a href="study24-2.html?data=50&test=99" >데이터 2개 전송</a><br>
+            <a href="study24-2.html?data=255&test=999&A=1&A=2&A=3">같은 이름의 데이터 전송</a><br>
+            <!--input태그를 이용한 get방식 데이터 전송처리-->
+            <input tpye="text" placeholder="data갑 입력"><br>
+            <input type="text" placeholder="test값 입력"><br>
+            <input type="button" value="전송"><br>
+
+            
+            
+            
+            
+            
+            
+            <script>
+                var btn=document.getElementsByTagName("input")[2];
+                btn.addEventListener("click", function(){
+                var d=document.getElementsByTagName("input")[0].value;
+                console.log(d);
+                var t=document.getElementsByTagName("input")[1].value;
+                console.log(t);
+
+                console.log("study24-2.html?data="+d+"&test="+t);
+                location.href="study24-2.html?data="+d+"&test="+t;
+
+               });
+
+            </script>
+        </body>
+    </html>

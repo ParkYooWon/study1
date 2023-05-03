@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="ko">
+        <head>
+            <meta charset="utf-8">
+            <title>
+                form태그를 이용한 통신
+            </title>
+
+        </head>
+        <body>
+            <!-- form태그는 데이터의 전송규격을 만들어준다. -->
+            <!-- type=submit을 통하여 전송을 실행할 수 있다. -->
+            <!-- submit을 누르면 자기가 속한 form내부의 input의 값들을 -->
+            <!-- 주어진 get방식 또는 post 방식으로 가공하여 목적지로 전달한다. -->
+            <!-- form태그 내부의 input은 name값을 가지지 않으면 데이터가 전송되지 않는다.-->
+
+
+
+            <form method="get" action="study25-2.html">
+                <span>text : </span><input type="text" name="t"><br>
+                <span>password : </span><input type="password" name="p"><br>
+                <span>cbox1: </span><input type="checkbox" name="ch1" value="HTML"><br>
+                <span>cbox2 : </span><input type="checkbox" name="ch2" value="CSS"><br>
+                <span>cbox3 : </span><input type="checkbox" name="ch3" value="JS"><br>
+                <span>color : </span><input type="color" name="c"><br>
+                <span>submit : </span><input type="submit" value="전송">
+
+
+            </form>
+
+
+
+
+            <script>
+                
+            </script>
+        </body>
+    </html>

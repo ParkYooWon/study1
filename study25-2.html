@@ -1,0 +1,38 @@
+<!doctype html>
+    <html lang="ko">
+        <head>
+            <title>form으로 받아온 데이터</title>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <h1>여기가 목적지 입니다.</h1>
+            <div id="result">
+                <h1>받아온 text : <span id="text"></span></h1>
+                <h1>받아온 password : <span id="password"></span></h1>
+                <h1>받아온 color : <input type="color" id="cr"></h1>
+            </div>
+            <script>
+                var domain=window.location.href;    //get데이터를 포함한 현재 문서경로 전체
+                var url = new URL(domain);          //문서경로 전체를 검색가능한 객체로 변경
+                var params=new URLSearchParams(url.search);//검색기능이 사용가능한 객체 생성
+                
+                var text=params.get("t");            // .html?t=값 에서 값만 추출 //name에 지정해두었던 것의 것?
+                document.getElementById("text").innerHTML=text;
+                
+                var pw=params.get("p");              //.html?t=값&p=값 에서 p에 해당하는 값만 추출
+                document.getElementById("password").innerHTML=pw;   //<span id="password">pw</span>
+                
+                var cb=params.get("ch1");   
+                //cheackbox는 체크가 되어 있으면 on , 안되어 있으면 name자체가 전송되지 않음
+                //cheakbox 태그에 value값을 적어두면 on대신 해당 value값을 전송받을 수 있다.
+
+                var hex=params.get("c");
+                document.getElementById("cr").value=hex;
+
+
+                
+
+
+            </script>
+        </body>
+    </html>

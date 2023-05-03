@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            #wrap{
+                width: 200px;
+                margin: 0 auto;
+               
+            }
+
+            #wrap > div{
+                height: 800px;
+            }
+            /*------------------------------*/
+            #red{
+                background-color: red;
+            }
+            #orange{
+                background-color: orange;
+            }
+            #yellow{
+                background-color: yellow;
+            }
+            #green{
+                background-color: green;
+            }
+            #blue{
+                background-color: blue;
+            }
+            #indigo{
+                background-color: indigo;
+            }
+            #purple{
+                background-color: purple;
+            }
+
+            ul{
+                width: 350px;
+                margin: 0 auto;
+                list-style: none;
+                padding: 25px 0 0 0;
+            }
+
+            #wrap #menu{
+                height: 100px;
+                background-color: rgba(0,0,0,0.5);
+                position: fixed;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+            }
+
+            li{
+                width: 50px;
+                height: 50px;
+                float: left;
+                background-color: white;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 50px;
+                font-size: 20px;
+                font-weight: bold;
+
+            }
+
+            li:hover{
+                background-color: aquamarine;
+                color: yellow;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="menu">
+                <ul>
+                    <li>빨</li>
+                    <li>주</li>
+                    <li>노</li>
+                    <li>초</li>
+                    <li>파</li>
+                    <li>남</li>
+                    <li>보</li>
+                </ul>
+            </div>
+            
+            <div id="red"></div>
+            <div id="orange"></div>
+            <div id="yellow"></div>
+            <div id="green"></div>
+            <div id="blue"></div>
+            <div id="indigo"></div>
+            <div id="purple"></div>
+
+        </div>
+
+        <script>
+            //location
+            console.log(location.href);  //
+            function move(a){
+                location.href="#"+a;
+            }
+            var lis=document.getElementsByTagName("li");    //li태그 7개가 모여있는 배열
+            var colors=["red", "orange","yellow","green","blue","indigo","purple"];
+            //색상 7개가 모여있는 배열
+            console.log(lis);
+            console.log(colors);
+            for(var i=0; i<lis.length; i++){
+                lis[i].setAttribute("onclick", "move('"+colors[i]+"')");    //#
+            }
+
+            
+
+        </script>
+    </body>
+</html>

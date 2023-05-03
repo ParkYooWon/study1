@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html lang="ko">
+         <head>
+            <meta charset="utf-8">
+            <title>
+
+            </title>
+        </head>
+        <body>
+            <h1>여기가 목적지입니다.</h1>
+            <div>
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <script>//직접 콘솔창 가서 어떻게 찍히는지 보면서 흐름을 찾자!
+                var domain = window.location.href;      //1)
+                console.log(domain);                //file:///G:/0503/HTML/0427/study24-2.html?data=data0000&test=test0000
+                var url = new URL(domain);              //2)
+                console.log(url);                   //
+                var params = new URLSearchParams(url.search);//"?data=data0000&test=test0000"
+                var test=params.get("test");    //메서드 겟, 스트링 매개변수
+                var data=params.get("data");
+                console.log(test);
+                console.log(data);
+                document.getElementsByTagName("h2")[0].innerHTML="1번 데이터 : "+data;
+                document.getElementsByTagName("h2")[1].innerHTML="2번 데이터 : "+test;
+                //동일한 이름의 데이터를 여러개 보낸 경우 첫번째 값만 확인이 가능하다.
+                //다만 여러개의 데이터를 배열로 받게되면 여러 데이터를 한번에 얻을 수 있다.
+                var A = params.getAll("A"); 
+                var wrap = document.getElementsByTagName("div")[0];
+                for( var i=0; i<A.length; i++){
+                    var temp=document.createElement("h2");
+                    temp.innerHTML="배열로 받아온 데이터"+A[i];
+                   document.body.appendChild(temp,wrap);
+
+                }
+                
+
+            </script>
+        </body>
+    </html>
