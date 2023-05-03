@@ -1,39 +1,46 @@
-package DAY0424;
+package HW06_02;
+
+import java.util.Scanner;
 
 public class EX06 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-
-		//예제 1. SUM()함수를 완성하시오.
+		//1학년 1반 친구들 10명의 몸무게를 입력 받은 후, 몸무게 중
+		//가장 큰 값을 출력하라
 		
-			int x, y;
-			int[] a1= {1,2,3};
-			int[] a2= {4,5,6};
-			
-			x= sum(a1); 	//sum()함수를 선언을 해주고, 선언을 하면서 sum변수의 값을 리턴 받아-
-			y= sum(a2);	    // 변수x에 넣어줬기에, 출력 가
-			
-			System.out.println(x);
-			System.out.println(y);
-			
-			
-	}
-
-	static int sum(int [] arr)	//매개변수는 int [] 타입의 arr라는 가상 배열 매개변수
-	{
-		int i=0;
-		int sum=0;
-		for(i=0; i<arr.length; i++)
-		{
-			sum = sum+arr[i];
+		System.out.println("1반의 몸무게를 입력하시오.");
+		Scanner sc = new Scanner(System.in);
+		
+		int [] weight = new int [10];
+		
+		for(int i=0; i<10; i++) {		//할당
+			weight[i]= sc.nextInt();	//입력
 		}
-		return sum;				//내가 sum함수로부터 받고자 하는 값이 sum이라는 정수 값이니, static int
-	
+		
+		
+		int weight_max=weightMax(weight);
+		printMax(weight_max);
+		
+			
+		
 	}
-}
 
+	static void printMax(int x) {
+		System.out.println(x);
+	}
+	
+	static int weightMax(int [] matrix) {
+		int max=0;
+		for(int i=0; i<matrix.length; i++)
+		{
+			if(matrix[i]>max) {
+				max=matrix[i];
+			}
+			
+		}return max;
+		
+	}
 	
 
-
+}
